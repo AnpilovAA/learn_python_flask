@@ -3,3 +3,4 @@ env
 python_learn_news.html
 config.py
 *.db
+task.py
