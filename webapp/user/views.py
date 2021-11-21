@@ -50,7 +50,7 @@ def register():
 @blueprint.route('/process-reg', methods=['POST'])
 def process_reg():
     form = RegistrationForm()
-    if form.validate_on_submit:
+    if form.validate_on_submit():
         news_user = User(
             username=form.username.data,
             email=form.email.data,
@@ -62,5 +62,11 @@ def process_reg():
         db.session.commit()
         flash('Регистрация прошла успешно')
         return redirect(url_for('user.login'))
-    flash('Пожалуйста исправьте ошибки в форме регистрации')
-    return redirect(url_for('user.register'))
+    else:
+        for field, errors in form.errors.items():
+            for error in errors:
+                flash('ошибка в поле {}: {}'.format(
+                    getattr(form, field).label.text,
+                    error
+                ))
+        return redirect(url_for('user.register'))
