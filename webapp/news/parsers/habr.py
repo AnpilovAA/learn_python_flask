@@ -11,9 +11,10 @@ from webapp.news.models import News
 
 
 if platform.system() == 'Windows':
-    locale.setlocale(locale.LC_ALL, "russian.UTF-8")
+    locale.setlocale(locale.LC_ALL, "russian")
 else:
-    locale.setlocale(locale.LC_TIME, 'ru_RU')
+    locale.setlocale(locale.LC_TIME, 'ru_RU.utf8')
+
 
 def parse_habr_date(date_str):
     if 'сегодня' in date_str:
