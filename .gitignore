@@ -6,3 +6,4 @@ config.py
 task.py
 envu
 *.sh
+celerybeat-schedule
