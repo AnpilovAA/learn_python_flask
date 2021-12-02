@@ -7,7 +7,6 @@ from webapp.admin.views import blueprint as admin_blueprint
 from webapp.news.views import blueprint as news_blueprint
 from webapp.user.models import User
 from webapp.weather import weather_by_city
-from webapp.python_org_news import get_python_news
 from webapp.user.views import blueprint as user_blueprint
 
 

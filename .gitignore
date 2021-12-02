@@ -7,3 +7,4 @@ task.py
 envu
 *.sh
 celerybeat-schedule
+migrations
